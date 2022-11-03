@@ -1,0 +1,23 @@
+﻿
+
+    @model MVC_ModMaZa.Models.DbSınıflar.Departman
+    @{
+        ViewBag.Title = "DepartmanGetir";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    @using (Html.BeginForm("Departmanguncelle", "departman", FormMethod.Post))
+
+    {
+        <div class="form-group">
+            <label>
+                Departman Adı
+
+            </label>
+            @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+            @Html.HiddenFor(x => x.ID)
+        </div>
+        <br />
+        <button class="btn btn-primary" >Güncelle </button>
+
+    }

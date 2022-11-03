@@ -1,0 +1,40 @@
+﻿@using MVC_ModMaZa.Models.DbSınıflar
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-hover">
+    <tr>
+        <th>Cari ID </th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+
+    </tr>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+
+                <td>@item.CariID</td>
+                <td>@item.CariAD</td>
+                <td>@item.CariSoyad</td>
+                <td>@item.CariSehir</td>
+                <td>@item.CariMail</td>
+                <td><a href="/Cariler/CariSil/@item.CariID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Cariler/CariGetir/@item.CariID" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Cariler/MusteriSatis/@item.CariID" class="btn btn-default" style="background-color:dodgerblue">Satış Geçmişi</a></td>
+            </tr>
+        }
+
+</table>
+<br />
+<a href="/Cariler/Yenicari" class="btn btn-info">Yeni Cari Ekle</a>

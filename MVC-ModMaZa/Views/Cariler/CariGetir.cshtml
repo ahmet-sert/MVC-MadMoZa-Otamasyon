@@ -1,0 +1,31 @@
+﻿@model MVC_ModMaZa.Models.DbSınıflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3>Cari Güncelleme Sayfası</h3>
+<br />
+@using (Html.BeginForm("CariGuncelle", "Cariler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(x => x.CariID)
+        <label> Cari Ad</label>
+        @Html.TextBoxFor(x => x.CariAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(Model => Model.CariAD, "", new { @class = "text-danger" })
+        <br />
+        <label> Cari Soyad</label>
+        @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+        <br />
+        <label> Cari Şehir</label>
+        @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+        <br />
+        <label> Cari Mail</label>
+        @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    </div>
+
+    <button class="btn btn-primary">Güncelle </button>
+}
+

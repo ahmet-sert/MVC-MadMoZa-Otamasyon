@@ -1,0 +1,38 @@
+﻿
+@model MVC_ModMaZa.Models.DbSınıflar.SatisHareket
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Satış Güncelle </h2>
+<br />
+
+@using (Html.BeginForm("Satisguncelle", "Satis", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.SatisİD)
+    <h4>Ürün </h4>
+    @Html.DropDownListFor(x => x.UrunID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+    <h4>Cari</h4>
+    @Html.DropDownListFor(x => x.CariID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    <h4> Personel</h4>
+    @Html.DropDownListFor(x => x.PersonelID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+
+    <br />
+    <h4>Adet</h4>
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    <h4> Fiyat</h4>
+    @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    <br />
+    <h4>Toplam Tutar</h4>
+    @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+    <br />
+    <h4>Tarih</h4>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class=" btn btn-warning"> Güncelle   </button>
+
+}

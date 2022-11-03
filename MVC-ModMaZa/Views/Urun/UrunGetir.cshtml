@@ -1,0 +1,39 @@
+﻿@model MVC_ModMaZa.Models.DbSınıflar.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Ürün Güncelle </h2>
+<br />
+
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post)) { 
+    @Html.HiddenFor(x=> x.ID)
+    <h4>Ürün İsim</h4>
+    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    <br />
+    <h4>Ürün Matka</h4>
+    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+    <br />
+    <h4>Ürün Stok</h4>
+    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+    <br />
+    <h4>Ürün Alış Fiyatı</h4>
+    @Html.TextBoxFor(x => x.AlişFiyat, new { @class = "form-control" })
+    <br />
+    <h4>Ürün Satış Fiyatı</h4>
+    @Html.TextBoxFor(x => x.SatişFiyati, new { @class = "form-control" })
+    <br />
+    <h4>Ürün Kategori</h4>
+    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.KategoriID, new { @class = "form-control" })*@
+    <br />
+    <h4>Ürün Görsel</h4>
+    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+    <br />
+    <h4>Ürün Durum</h4>
+    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    <br />
+    <button class=" btn btn-warning"> Güncelle   </button>
+
+}

@@ -1,0 +1,44 @@
+﻿@using MVC_ModMaZa.Models.DbSınıflar
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px; ">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Kategori Adı
+        <th>
+            Sil
+        <th>
+            Güncelle
+        </th>
+   
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.KategoriAd
+            </td>
+            <td>
+                <a  href="/Kategori/KategoriSil/@item.ID" class="btn btn-danger">SiL</a>
+            </td>
+            <td >
+                <a  href="/Kategori/GetKategori/@item.ID" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+        
+    }
+
+</table>
+<a  class="btn btn-primary" href="/Kategori/KategoriEkle">Kategori Ekle</a>

@@ -1,0 +1,49 @@
+﻿@using MVC_ModMaZa.Models.DbSınıflar
+@model List<Departman>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px; ">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Departman Adı
+        <th>
+            Sil
+        <th>
+            Güncelle
+        </th>
+        <th>
+            Detaylar
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.DepartmanAd
+            </td>
+            <td>
+                <a href="/departman/DepartmanSil/@item.ID" class="btn btn-danger">SiL</a>
+            </td>
+            <td>
+                <a href="/departman/DepartmanGetir/@item.ID" class="btn btn-success">Güncelle</a>
+            </td>
+            <td>
+                <a href="/departman/DepartmanDetay/@item.ID" class="btn btn btn-outline-primary">Detaylar</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+<a class="btn btn-info" href="/departman/DepartmanEkle">Departman Ekle</a>

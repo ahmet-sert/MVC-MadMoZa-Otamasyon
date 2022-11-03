@@ -1,0 +1,26 @@
+﻿@model MVC_ModMaZa.Models.DbSınıflar.Kategori
+@{
+    ViewBag.Title = "GetKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>GetKategori</h2>
+
+<br />
+
+@using (Html.BeginForm("KategoriGüncelle", "Kategori", FormMethod.Post)) 
+
+{
+       <div class="form-group">
+           <label>
+               <h4> Kategori Adı</h4>
+
+           </label>
+           @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+           @Html.HiddenFor(x=> x.ID )
+       </div>
+       <br />
+       <button class="btn btn-warning">
+           Güncelle
+       </button>
+}

@@ -1,0 +1,36 @@
+﻿@model MVC_ModMaZa.Models.DbSınıflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Fatura Güncelle </h2>
+<br />
+
+@using (Html.BeginForm("FaturaGuncelle", "Faturalar", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.FaturaID)
+    <h4>Seri No</h4>
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    <h4>Sıra No</h4>
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+    <br />
+    <h4>Vergi Dairesi</h4>
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    <h4>Tarih</h4>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <h4>Saat</h4>
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    <h4>Teslim Eden</h4>
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    <h4>Tesim Alan</h4>
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <br />
+    <button class=" btn btn-warning"> Güncelle   </button>
+
+}

@@ -1,0 +1,42 @@
+﻿@using MVC_ModMaZa.Models.DbSınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "DepartmanPersonelSatıs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2> Satış Detayı</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Personel Adı: @ViewBag.pisim</li>
+</ol
+><table class="table table-condensed" >
+    <tr>
+        <th>SatışID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SatisİD</td>
+            <td>@item.urun.UrunAd</td>
+            <td>@item.cariler.CariAD @item.cariler.CariSoyad</td>
+            <td>@item.Fiyat</td>
+            <td>@item.Adet</td>
+            <td>@item.ToplamTutar</td>
+            <td>@item.Tarih</td>
+            <td>
+                <a href="#"class="btn btn btn-outline-primary">Yazdır</a>
+            </td>
+
+        </tr>
+    }
+</table>
+

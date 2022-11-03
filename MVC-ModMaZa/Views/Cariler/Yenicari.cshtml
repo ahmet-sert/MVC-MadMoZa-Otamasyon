@@ -1,0 +1,30 @@
+﻿@model MVC_ModMaZa.Models.DbSınıflar.Cariler
+@{
+    ViewBag.Title = "Yenicari";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari ekle</h2>
+<br />
+
+<form class="form-group" method="post">
+    <label><h4> Departman Adı </h4> </label>
+    @Html.TextBoxFor(x => x.CariAD, new { @class = "form-control" })
+    <br />
+    <label><h4>Cari Soyad </h4> </label>
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+    <br />
+    <label><h4> Cari Soyad </h4> </label>
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    <br />
+
+    <label><h4> Cari Mail </h4> </label>
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    <br />
+ 
+ 
+    <button class="btn btn-info">
+        Kaydet
+    </button>
+</form>

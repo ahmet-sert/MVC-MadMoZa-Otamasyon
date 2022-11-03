@@ -1,0 +1,39 @@
+﻿@using MVC_ModMaZa.Models.DbSınıflar;
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+       <th>ID</th>
+       <th>Ürün</th>
+       <th>Marka</th>
+       <th>Stok>
+       <th>Alış Fiyatı</th>
+       <th>Satış Fiyatı</th>
+       <th>Kategori</th>
+       <th>Görsel</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.UrunAd</td>
+            <td>@item.Marka</td>
+            <td>@item.Stok</td>
+            <td>@item.AlişFiyat</td>
+            <td>@item.SatişFiyati</td>
+            <td>@item.kategori.KategoriAd</td>
+            <td>@item.UrunGorsel</td>
+            <td> <a  href="/Urun/UrunSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td> <a href="/Urun/UrunGetir/@item.ID" class="btn btn-success">Güncelle</a></td>
+
+
+
+        </tr>
+    }
+</table>
+<a href="/Urun/YeniUrun" class="btn btn-info">Yeni Ürün</a>

@@ -1,0 +1,74 @@
+﻿@using MVC_ModMaZa.Models.DbSınıflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px; ">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Seri no
+        <th>
+            Sıra No
+        <th>
+            Vergi Dairesi
+        </th>
+        <th>
+            Tarih
+        </th>
+        <th>
+            Saat
+        </th>
+        <th>
+            Toplam
+        </th>
+        <th>
+            Teslim Eden
+        </th>
+        <th>
+            Teslim Alan
+        </th>
+        <th>
+            Toplam
+        </th>
+        <th>
+            Güncelle
+        </th>
+        <th>
+            Detaylar
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+
+
+        <tr>
+            <td>
+                @item.FaturaID
+            </td>
+            <td> @item.FaturaSeriNo</td>
+            <td> @item.FaturaSıraNo</td>
+            <td> @item.VergiDairesi</td>
+            <td> @item.Tarih</td>
+            <td> @item.Saat</td>
+            <td> @item.TeslimEden</td>
+            <td> @item.TeslimAlan</td>
+            <td></td>
+
+            <td>
+                <a href="/Faturalar/FaturaGetir/@item.FaturaID" class="btn btn-success">Güncelle</a>
+            </td>
+            <td>
+                <a href="/Faturalar/FaturaDetay/@item.FaturaID" class="btn btn btn-outline-primary">Detaylar</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+<a class="btn btn-info" href="/Faturalar/FaturaEkle">Yeni Fatura Girişi</a>

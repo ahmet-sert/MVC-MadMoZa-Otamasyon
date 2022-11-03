@@ -1,0 +1,40 @@
+﻿@model MVC_ModMaZa.Models.DbSınıflar.Faturalar
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>Yeni Fatura Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+    <h4>Fatura Seri No</h4>
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    <h4>Fatura Sıra no  </h4>
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })
+    <br />
+    <h4>Tarih </h4>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <h4>Saat</h4>
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    <h4>Vergi Dairesi</h4>
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <h4>Teslim Eden</h4>
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    <h4>Teslim Alan</h4>
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <br />
+
+
+    <br />
+
+
+    <button class=" btn btn-primary"> Kaydet   </button>
+</form>
